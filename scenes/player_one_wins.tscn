@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cvpbb2hr0hwjb"]
+
+[ext_resource type="Texture2D" uid="uid://bc4j1cdbwbqc" path="res://assets/P1.png" id="1_ciotc"]
+[ext_resource type="Script" uid="uid://c4pewuud5dstc" path="res://scripts/play_again.gd" id="2_eyv42"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wccwa"]
+bg_color = Color(0.3035528, 0.64192885, 0.8179241, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xc1so"]
+bg_color = Color(0.2628528, 0.7046874, 0.33109662, 1)
+
+[node name="Player_One_Wins" type="Control" unique_id=545103433]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=275532837]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=78750597]
+offset_left = -36.0
+offset_top = -40.0
+offset_right = 1649.0
+offset_bottom = 959.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_wccwa")
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=252166601]
+offset_right = 1595.0
+offset_bottom = 84.0
+theme_override_font_sizes/font_size = 100
+text = "Player 1 Wins"
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=895398909]
+offset_left = 623.0
+offset_top = 166.0
+offset_right = 1014.0
+offset_bottom = 620.0
+texture = ExtResource("1_ciotc")
+
+[node name="Button" type="Button" parent="CanvasLayer" unique_id=1564994126]
+offset_left = 544.0
+offset_top = 665.0
+offset_right = 1145.0
+offset_bottom = 898.0
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_xc1so")
+text = "Play Again"
+script = ExtResource("2_eyv42")
+
+[connection signal="pressed" from="CanvasLayer/Button" to="CanvasLayer/Button" method="_on_pressed"]

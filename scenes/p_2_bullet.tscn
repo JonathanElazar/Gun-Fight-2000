@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://hwfqfgdgw6o"]
+
+[ext_resource type="Script" uid="uid://ddc8itl3vgro0" path="res://scripts/p2_wins.gd" id="1_05lfb"]
+[ext_resource type="Texture2D" uid="uid://b7mjx8n3837qb" path="res://assets/P2_Bullet.png" id="1_gpst6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_05lfb"]
+size = Vector2(39, 23)
+
+[node name="P2_Bullet" type="Node2D" unique_id=325235076]
+
+[node name="P2_Bullet" type="Area2D" parent="." unique_id=608242394]
+script = ExtResource("1_05lfb")
+
+[node name="Sprite2D" type="Sprite2D" parent="P2_Bullet" unique_id=1055208004]
+scale = Vector2(2.7, 2.7)
+texture = ExtResource("1_gpst6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="P2_Bullet" unique_id=307289435]
+light_mask = 1023
+visibility_layer = 1023
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_05lfb")
+
+[connection signal="body_entered" from="P2_Bullet" to="P2_Bullet" method="_on_body_entered"]

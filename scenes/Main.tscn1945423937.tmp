@@ -1,13 +1,27 @@
 [gd_scene format=3 uid="uid://4acflqyjq8nn"]
 
-[ext_resource type="Texture2D" uid="uid://ddsqjntkvcpyh" path="res://assets/background.png" id="1_wtcfe"]
-[ext_resource type="Script" uid="uid://c5v34r62alegw" path="res://scripts/move-P1.gd" id="2_0hol4"]
-[ext_resource type="Texture2D" uid="uid://bc4j1cdbwbqc" path="res://assets/P1.png" id="2_epypp"]
-[ext_resource type="Texture2D" uid="uid://btdrhflx47hwr" path="res://assets/P2.png" id="3_0hol4"]
-[ext_resource type="Script" uid="uid://dxg1qxte0bhxo" path="res://scripts/move-P2.gd" id="4_q6r6c"]
+[ext_resource type="Texture2D" uid="uid://ddsqjntkvcpyh" path="res://assets/background.png" id="1_c01mt"]
+[ext_resource type="Texture2D" uid="uid://bc4j1cdbwbqc" path="res://assets/P1.png" id="3_jlsqs"]
+[ext_resource type="Script" uid="uid://dxg1qxte0bhxo" path="res://scripts/move-P2.gd" id="4_q8u5g"]
+[ext_resource type="Texture2D" uid="uid://btdrhflx47hwr" path="res://assets/P2.png" id="5_lhr70"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wccwa"]
 size = Vector2(42, 1016)
+
+[sub_resource type="GDScript" id="GDScript_rarhs"]
+script/source = "extends CharacterBody2D
+
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xc1so"]
 size = Vector2(170, 300)
@@ -17,7 +31,7 @@ size = Vector2(170, 300)
 [node name="Background" type="Sprite2D" parent="." unique_id=96284526]
 position = Vector2(2.0000095, -1.4999948)
 scale = Vector2(1.1802326, 1.2330731)
-texture = ExtResource("1_wtcfe")
+texture = ExtResource("1_c01mt")
 
 [node name="Camera2D" type="Camera2D" parent="Background" unique_id=2041659824]
 position = Vector2(-8.225441e-06, 0.8348158)
@@ -61,11 +75,11 @@ shape = SubResource("RectangleShape2D_wccwa")
 
 [node name="P1" type="CharacterBody2D" parent="." unique_id=44168155]
 position = Vector2(-633, 285)
-script = ExtResource("2_0hol4")
+script = SubResource("GDScript_rarhs")
 
 [node name="Sprite2D" type="Sprite2D" parent="P1" unique_id=1589354867]
 scale = Vector2(20, 20)
-texture = ExtResource("2_epypp")
+texture = ExtResource("3_jlsqs")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="P1" unique_id=1608779524]
 position = Vector2(2, 12)
@@ -73,11 +87,11 @@ shape = SubResource("RectangleShape2D_xc1so")
 
 [node name="P2" type="CharacterBody2D" parent="." unique_id=984066844]
 position = Vector2(638, 287)
-script = ExtResource("4_q6r6c")
+script = ExtResource("4_q8u5g")
 
 [node name="Sprite2D" type="Sprite2D" parent="P2" unique_id=1506685729]
 scale = Vector2(20, 20)
-texture = ExtResource("3_0hol4")
+texture = ExtResource("5_lhr70")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="P2" unique_id=102202809]
 position = Vector2(2, 12)
