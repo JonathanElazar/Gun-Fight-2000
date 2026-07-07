@@ -22,3 +22,6 @@ When you open the game you will see two characters one for each player. The play
 
 Your up key will let you jump your left and right keys let you move left and right and your down key shoots a bullet.
 You win the game if you bullet hits the other player.
+
+## 🍎 macOS users
+If you are using macOS and build the game yourself please upload the build as an issue so other macOS users can use your build.
